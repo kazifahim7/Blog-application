@@ -8,4 +8,11 @@ const userValidation=z.object({
     })
 })
 
+export const logInValidation=z.object({
+    body:z.object({
+        email: z.string().email("invalid email format"),
+        password: z.string({required_error:"password is Required"})
+    })
+})
+
 export default userValidation

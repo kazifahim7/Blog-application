@@ -10,9 +10,10 @@ import handleZodError from '../Error/zodError';
 import mongooseValidationError from '../Error/validationError';
 import AppError from '../Error/AppEror';
 
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const errorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
-    let statusCode = err.statusCode || 500;
+    let statusCode = err.statusCode;
     let message = err.message || "Something went wrong";
     let errorSources: TerrorSource = [
         {
@@ -46,7 +47,7 @@ const errorHandler = (err: any, req: Request, res: Response, next: NextFunction)
             path: '',
             message: err?.message
         }]
-    }
+    } 
 
     res.status(statusCode).json({
         success: false,

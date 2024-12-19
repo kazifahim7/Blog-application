@@ -5,3 +5,8 @@ export type TRegister = {
     role: "admin" | "user",
     isBlocked:boolean
 }
+
+export type TLogIn={
+    email:string,
+    password:string
+}
