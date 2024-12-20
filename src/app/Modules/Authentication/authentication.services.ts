@@ -6,6 +6,12 @@ import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken'
 
 const registerUserInDB = async (payload: TRegister) => {
+    // <- check if user already exists in dataBase->
+    const isExists=await UserModel.findOne({email:payload?.email})
+    if(isExists){
+        throw new AppError(401,"This User  Already exists");
+        
+    }
 
     // <- hash Password ->
     payload.password = await bcrypt.hash(payload.password, Number(config.salt_round))

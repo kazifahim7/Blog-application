@@ -8,7 +8,7 @@ import { blogController } from './blog.controller'
 const router = express.Router()
 
  router.post('/',auth("user"),validationRequest(blogValidation),blogController.createBlog)
- router.put('/:id',auth("user"),validationRequest(updateBlogValidation),blogController.updateBlog)
+ router.patch('/:id',auth("user"),validationRequest(updateBlogValidation),blogController.updateBlog)
  router.delete('/:id',auth("user"),blogController.deleteBlog)
  router.get('/',auth("user","admin"),blogController.getAllBlog)
 

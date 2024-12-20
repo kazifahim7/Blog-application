@@ -39,12 +39,14 @@ const auth=(...roles:string[])=>{
                 'You are not authorized . please logIn again',
             );
         }
+         
 
+        
 
-        if (role && roles.length && !roles.includes(role)){
+        if (role && !roles.includes(isExists.role === "admin"?"admin":role)){
             throw new AppError(
                 401,
-                'You are not authorized  . please logIn again',
+                'You are not authorized  .please logIn again',
             );
         }
 
