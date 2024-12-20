@@ -52,7 +52,8 @@ const errorHandler = (err: any, req: Request, res: Response, next: NextFunction)
     res.status(statusCode).json({
         success: false,
         message,
-        errorSources,
+        statusCode,
+        error:errorSources,
         stack: config.node_env === "development" ? err?.stack : null
     });
 };

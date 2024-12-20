@@ -45,6 +45,7 @@ const logInUser = async (payload: TLogIn) => {
         role: isExists?.role,
         email: isExists?.email
     }
+    console.log(isExists.role)
 
     const token = jwt.sign(user, config.jwt_access_secret as string, { expiresIn: "30d" });
 

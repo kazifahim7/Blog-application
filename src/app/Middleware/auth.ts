@@ -41,9 +41,9 @@ const auth=(...roles:string[])=>{
         }
          
 
-        
+        console.log("hello",role)
 
-        if (role && !roles.includes(isExists.role === "admin"?"admin":role)){
+        if (role && !roles.includes(role)){
             throw new AppError(
                 401,
                 'You are not authorized  .please logIn again',
