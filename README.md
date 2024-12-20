@@ -383,7 +383,7 @@ Error handling is crucial in ensuring that an application responds gracefully to
 {
   "success": false,
   "message": "Error message describing the issue",
-  "statusCode": 400, // or other relevant HTTP status code
+  "statusCode": 400, 
   "error": {"details": "Additional error details, if applicable"},
   "stack": "error stack trace, if available"
 }
