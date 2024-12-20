@@ -8,6 +8,8 @@ const blogSchema = new Schema<TBlog>({
     isPublished:{type:Boolean,default:true}
 
     
+},{
+    timestamps:true
 });
 
 // <- Create a Model.->
