@@ -47,7 +47,7 @@ const getAllBlogFromDB=async(query:Record<string,unknown>)=>{
     const blogQuery = new QueryBuilder(BlogModel.find().populate("author"),query).search(["title","content"]).filter().sortBy().sortOrder()
     const result= await blogQuery.modelQuery
 
-    return result
+    return result 
 }
 
 
