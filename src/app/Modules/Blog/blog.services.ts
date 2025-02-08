@@ -44,7 +44,7 @@ const deleteBlogFromDB = async (id: string,  author: Types.ObjectId) => {
     return result
 }
 const getAllBlogFromDB=async(query:Record<string,unknown>)=>{
-    const blogQuery = new QueryBuilder(BlogModel.find().populate("author"),query).search(["title","content"]).filter().sortBy().sortOrder()
+    const blogQuery = new QueryBuilder(BlogModel.find().select("_id title content author").populate("author"),query).search(["title","content"]).filter().sortBy().sortOrder()
     const result= await blogQuery.modelQuery
 
     return result 

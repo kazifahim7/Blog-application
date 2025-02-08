@@ -4,6 +4,8 @@ export type TBlog={
     title:string,
     content:string,
     author:Types.ObjectId,
-    isPublished:boolean
+    isPublished:boolean,
+    image:string,
+    category:string
 
 }

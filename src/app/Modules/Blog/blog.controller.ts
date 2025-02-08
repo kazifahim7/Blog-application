@@ -15,7 +15,12 @@ const createBlog=catchAsync(async(req:Request,res:Response)=>{
         success:true,
         message: "Blog created successfully",
         statusCode:201,
-        data:result
+        data:{
+            _id:result._id,
+            title:result.title,
+            content:result.content,
+            author:result.author
+        }
     })
 })
 const updateBlog=catchAsync(async(req:Request,res:Response)=>{
@@ -31,7 +36,12 @@ const updateBlog=catchAsync(async(req:Request,res:Response)=>{
         success:true,
         message: "Blog updated  successfully",
         statusCode:200,
-        data:result
+        data:{
+            _id:result?._id,
+            title:result?.title,
+            content:result?.content,
+            author:result?.author
+        }
     })
 })
 const deleteBlog=catchAsync(async(req:Request,res:Response)=>{

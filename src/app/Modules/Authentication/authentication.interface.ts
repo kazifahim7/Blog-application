@@ -3,7 +3,8 @@ export type TRegister = {
     email:string,
     password:string,
     role: "admin" | "user",
-    isBlocked:boolean
+    isBlocked:boolean,
+
 }
 
 export type TLogIn={
